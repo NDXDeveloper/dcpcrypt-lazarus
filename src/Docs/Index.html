@@ -1,0 +1,295 @@
+<html>
+  <head>
+    <title>DCPcrypt v2.0.5: Users Guide - Index</title>
+  </head>
+  <body>
+    <p align="center"><font size="+2"><b>DCPcrypt Cryptographic Component Library v2.0.5</b></font><br>
+      <font size="+1">Lazarus / Free Pascal edition</font><br>
+      <font size="+1">Originally written by David Barton</font>
+    <p><font size="+2">Introduction</font>
+    <p>DCPcrypt is a collection of cryptographic components originally written
+       for Borland Delphi by David Barton, ported to Lazarus/Free Pascal and
+       maintained by multiple contributors.
+    <p>The idea behind DCPcrypt is that it should be possible to "drop in" any algorithm implementation to replace another with minimum or no code changes. To aid in this goal all cryptographic components are descended from one of several base classes, TDCP_cipher for encryption algorithms and TDCP_hash for message digest algorithms.
+    <p>
+    <table>
+      <tr>
+        <td valign="center"><a href="http://www.opensource.org/docs/definition.php"><img src="osi-certified-120x100.png" border="0"></a></td>
+        <td valign="center">
+          <p>DCPcrypt is open source software released under the <a href="MIT_license.txt">MIT license</a>. There is no charge for inclusion in other software.
+          <p>This software is OSI Certified Open Source Software. OSI Certified is a certification mark of the <a href="http://www.opensource.org/">Open Source Initiative</a>.
+        </td>
+      </tr>
+    </table>
+    <p>&nbsp;
+    <p><font size="+2">What's New</font>
+    <p>Changes in v2.0.5 by Nicolas Deoux (2026):
+    <ul>
+      <li>Added GUI examples ported from Delphi VCL to Lazarus LCL:
+        <ul>
+          <li>EncryptStrings - String encryption/decryption using EncryptStream
+          <li>FileEncrypt - File encryption/decryption with thread support
+        </ul>
+    </ul>
+    <p>Changes in v2.0.4.2 by Werner Pamler (2022):
+    <ul>
+      <li>Fix hashes for files &gt;4 GB (issue #31934)
+    </ul>
+    <p>Changes in v2.0.4.1 by Graeme Geldenhuys (2010):
+    <ul>
+      <li>More fixes for 64-bit support
+      <li>Removed a lot of compiler warnings - tested with FPC 2.4.1
+    </ul>
+    <p>Changes in v2.0.4 by Graeme Geldenhuys (2009):
+    <ul>
+      <li>Split the Lazarus package into two separate packages (runtime and design-time)
+      <li>Updated code to be compilable with FPC 2.4.0-rc1
+      <li>Updated code to be compilable with 64-bit FPC 2.4.0-rc1
+    </ul>
+    <p>Ported to Lazarus by Barko in 2006.
+    <p>&nbsp;
+    <p><font size="+2">Installation</font>
+    <p>
+    <table>
+      <tr>
+        <td width="180"><b>Option 1 - Packages</b></td>
+        <td>Open src/dcpcrypt.lpk (runtime) and src/dcpcrypt_laz.lpk (design-time) in the Lazarus IDE and install them. Cipher and hash components will appear on the component palette.</td>
+      </tr>
+      <tr>
+        <td width="180"><b>Option 2 - Direct use</b></td>
+        <td>Add src/, src/Ciphers/ and src/Hashes/ to your project unit search paths. Create cipher and hash instances in code. See the GUI examples.</td>
+      </tr>
+    </table>
+    <p>&nbsp;
+    <p><font size="+2">Examples</font>
+    <table>
+      <tr>
+        <td width="180"><b>Console examples</b></td>
+        <td>examples/console/ - String and file encryption tests</td>
+      </tr>
+      <tr>
+        <td width="180"><b>GUI examples</b></td>
+        <td>examples/gui/EncryptStrings/ - String encryption with EncryptStream<br>
+            examples/gui/FileEncrypt/ - File encryption with thread support<br>
+            Build with: <code>lazbuild &lt;project&gt;.lpi</code></td>
+      </tr>
+    </table>
+    <p>&nbsp;
+    <p><font size="+2">Usage</font>
+    <p>Please note that an appreciation of the basic principles of encryption/decryption and key management is needed to ensure the correct usage of the ciphers implemented within this package. A good introduction on this subject is provided by Bruce Schneier's "Applied Cryptography" (ISBN: 0-471-11709-9) also see the NIST publication SP800-38A for information on the block cipher chaining modes.
+    <ul>
+      <li><a href="Ciphers.html">Ciphers</a> - the basic building block of DCPcrypt, the TDCP_cipher component.
+      <li><a href="BlockCiphers.html">Block Ciphers</a> - the base of all block ciphers, the TDCP_blockcipher component.
+      <li><a href="Hashes.html">Hashes</a> - the base of all hash algorithms, the TDCP_hash component.
+    </ul>
+    <p>DCPcrypt contains the following ciphers and hash algorithms:
+    <p>
+    <table bgcolor="#FFFFCC" align="center">
+      <tr>
+        <td colspan="4" align="center"><font size="+1"><b>Ciphers</b></font></td>
+      </tr>
+      <tr>
+        <td><b>Name</b></td>
+        <td><b>Patents</b></td>
+        <td><b>Block Size</b></td>
+        <td><b>Max Key Size*</b></td>
+      </tr>
+      <tr>
+        <td>Blowfish</td>
+        <td>None</td>
+        <td>64 bits</td>
+        <td>448 bits</td>
+      </tr>
+      <tr>
+        <td>Cast128</td>
+        <td>None</td>
+        <td>64 bits</td>
+        <td>128 bits</td>
+      </tr>
+      <tr>
+        <td>Cast256</td>
+        <td>Patented?</td>
+        <td>128 bits</td>
+        <td>256 bits</td>
+      </tr>
+      <tr>
+        <td>DES</td>
+        <td>None</td>
+        <td>64 bits</td>
+        <td>64 bits**</td>
+      </tr>
+      <tr>
+        <td>3DES</td>
+        <td>None</td>
+        <td>64 bits</td>
+        <td>192 bits</td>
+      </tr>
+      <tr>
+        <td>Ice</td>
+        <td>None?</td>
+        <td>64 bits</td>
+        <td>64 bits</td>
+      </tr>
+      <tr>
+        <td>Thin Ice</td>
+        <td>None?</td>
+        <td>64 bits</td>
+        <td>64 bits</td>
+      </tr>
+      <tr>
+        <td>Ice2</td>
+        <td>None?</td>
+        <td>64 bits</td>
+        <td>128 bits</td>
+      </tr>
+      <tr>
+        <td>Gost</td>
+        <td>None</td>
+        <td>64 bits</td>
+        <td>256 bits</td>
+      </tr>
+      <tr>
+        <td>IDEA</td>
+        <td>Free for non-commercial use</td>
+        <td>64 bits</td>
+        <td>128 bits</td>
+      </tr>
+      <tr>
+        <td>MARS</td>
+        <td>Patented?</td>
+        <td>128 bits</td>
+        <td>1248 bits</td>
+      </tr>
+      <tr>
+        <td>Misty1</td>
+        <td>Free for non-commercial use</td>
+        <td>64 bits</td>
+        <td>128 bits</td>
+      </tr>
+      <tr>
+        <td>RC2</td>
+        <td>None</td>
+        <td>64 bits</td>
+        <td>1024 bits</td>
+      </tr>
+      <tr>
+        <td>RC4</td>
+        <td>None</td>
+        <td>N/A</td>
+        <td>2048 bits</td>
+      </tr>
+      <tr>
+        <td>RC5</td>
+        <td>Patented</td>
+        <td>64 bits</td>
+        <td>2048 bits</td>
+      </tr>
+      <tr>
+        <td>RC6</td>
+        <td>Patented</td>
+        <td>128 bits</td>
+        <td>2048 bits</td>
+      </tr>
+      <tr>
+        <td>Rijndael (AES)</td>
+        <td>None</td>
+        <td>128 bits</td>
+        <td>256 bits</td>
+      </tr>
+      <tr>
+        <td>Serpent</td>
+        <td>None</td>
+        <td>128 bits</td>
+        <td>256 bits</td>
+      </tr>
+      <tr>
+        <td>TEA</td>
+        <td>None</td>
+        <td>64 bits</td>
+        <td>128 bits</td>
+      </tr>
+      <tr>
+        <td>Twofish</td>
+        <td>None</td>
+        <td>128 bits</td>
+        <td>256 bits</td>
+      </tr>
+    </table>
+    <p>* although the quoted maximum key size may be extremely large it doesn't mean that the algorithm is secure to the same level.<br>
+       ** a 64bit key is used for DES then every 8th bit is discarded (parity) so the effective size is 56 bits.
+    <p>
+    <table bgcolor="#FFFFCC" align="center">
+      <tr>
+        <td colspan="3" align="center"><font size="+1"><b>Hash Algorithms</b></font></td>
+      </tr>
+      <tr>
+        <td><b>Name</b></td>
+        <td><b>Patents</b></td>
+        <td><b>Digest Size</b></td>
+      </tr>
+      <tr>
+        <td>Haval</td>
+        <td>None</td>
+        <td>128, 160, 192, 224, 256 bits*</td>
+      </tr>
+      <tr>
+        <td>MD4</td>
+        <td>None</td>
+        <td>128 bits</td>
+      </tr>
+      <tr>
+        <td>MD5</td>
+        <td>None</td>
+        <td>128 bits</td>
+      </tr>
+      <tr>
+        <td>RipeMD-128</td>
+        <td>None</td>
+        <td>128 bits</td>
+      </tr>
+      <tr>
+        <td>RipeMD-160</td>
+        <td>None</td>
+        <td>160 bits</td>
+      </tr>
+      <tr>
+        <td>SHA1</td>
+        <td>None</td>
+        <td>160 bits</td>
+      </tr>
+      <tr>
+        <td>SHA256</td>
+        <td>None</td>
+        <td>256 bits</td>
+      </tr>
+      <tr>
+        <td>SHA384</td>
+        <td>None</td>
+        <td>384 bits</td>
+      </tr>
+      <tr>
+        <td>SHA512</td>
+        <td>None</td>
+        <td>512 bits</td>
+      </tr>
+      <tr>
+        <td>Tiger</td>
+        <td>None</td>
+        <td>192 bits</td>
+      </tr>
+    </table>
+    <p>* The different digest sizes of Haval can be accessed by uncommenting the $defines at the start of DCPhaval.pas.
+    <p>&nbsp;
+    <p><font size="+2">Contributors</font>
+    <table>
+      <tr><td>David Barton</td><td>Original DCPcrypt author (1999-2003)</td></tr>
+      <tr><td>Barko</td><td>Lazarus port (2006)</td></tr>
+      <tr><td>Graeme Geldenhuys</td><td>Package split, 64-bit support (2009-2010)</td></tr>
+      <tr><td>Werner Pamler</td><td>Large file hash fix (2022)</td></tr>
+      <tr><td>Nicolas Deoux</td><td>GUI examples VCL to LCL port (2026) - <a href="mailto:NDXDev@gmail.com">NDXDev@gmail.com</a></td></tr>
+    </table>
+    <p>&nbsp;
+    <p><em>DCPcrypt is copyrighted by its respective authors.<br>
+       Released under the MIT license. All trademarks are property of their respective owners.</em>
+  </body>
+</html>
