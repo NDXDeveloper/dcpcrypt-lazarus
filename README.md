@@ -25,6 +25,20 @@ The idea behind DCPcrypt is that it should be possible to "drop in" any algorith
 - **Cross-Platform** - Linux, Windows, and macOS support
 - **No External Dependencies** - Pure Pascal implementation
 
+### Screenshots
+
+**String Encryption** — Encrypt/decrypt strings with any cipher+hash combination:
+
+| Initial state | After encryption |
+|:---:|:---:|
+| ![EncryptStrings - initial](docs/screenshots/EncryptStrings-1.png) | ![EncryptStrings - encrypted](docs/screenshots/EncryptStrings-2.png) |
+
+**File Encryption** — Encrypt/decrypt files with progress bar (threaded):
+
+| Ready to encrypt | Encryption in progress |
+|:---:|:---:|
+| ![FileEncrypt - ready](docs/screenshots/FileEncrypt-1.png) | ![FileEncrypt - progress](docs/screenshots/FileEncrypt-2.png) |
+
 ---
 
 ## Quick Start
