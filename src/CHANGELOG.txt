@@ -1,0 +1,61 @@
+Change in v2.0.5 by Nicolas Deoux (2026)
+  NDXDev@gmail.com
+  https://www.linkedin.com/in/nicolas-deoux-ab295980/
+
+* Version number bumped to 2.0.5
+
+* Added GUI examples ported from Delphi VCL to Lazarus LCL:
+  - examples/gui/EncryptStrings: String encryption/decryption using EncryptStream
+  - examples/gui/FileEncrypt: File encryption/decryption with thread support
+
+* VCL to LCL adaptations:
+  - Replaced Windows-specific units (Windows, Messages, SHFolder, ShellAPI,
+    System.IOUtils) with cross-platform equivalents
+  - Replaced Vcl.ComCtrls/ExtCtrls/ImgList with ComCtrls/ExtCtrls
+  - Replaced TSpeedButton with TButton
+  - Replaced TEncoding.Unicode (Delphi) with UTF-8 byte-level hex conversion
+  - Replaced TPath.HasValidFileNameChars with manual filename validation
+  - Replaced Windows drag-drop (WM_DROPFILES) with LCL AllowDropFiles/OnDropFiles
+  - Replaced Thread.Resume with Thread.Start
+  - Removed Application.OnMessage (Windows-specific)
+  - Crypto components created in code (no design-time package required)
+
+
+Change in v2.0.4.2 by Werner Pamler (2022)
+
+* Version number bumped to 2.0.4.2
+
+* Fix hashes for files >4 GB (issue #31934)
+
+
+Change in v2.0.4.1 by Graeme Geldenhuys (2010)
+
+ * Version number bumped to v2.0.4.1
+
+ * More fixes for 64-bit support
+
+ * Removed a lot of compiler warnings - tested with FPC 2.4.1
+
+
+Change in v2.0.4 by Graeme Geldenhuys (2009)
+ 
+ * Version number bumped to v2.0.4
+
+ * Split the Lazarus package into two separate packages
+   - one is runtime only package and GUI toolkit independent.
+   - one is Lazarus design-time only package which installs
+     components in component palette.
+     
+ * Updated code to be compilable with FPC 2.4.0-rc1
+ 
+ * Updated code to be compilable with 64-bit FPC 2.4.0-rc1.
+   - Tested under 32-bit & 64-bit Linux on x86 systems.
+
+   
+Changes since DCPCrypt v2 Beta 3:
+
+ * Ported DCPCrypt to Lazarus by Barko in 2006
+
+
+ -=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
