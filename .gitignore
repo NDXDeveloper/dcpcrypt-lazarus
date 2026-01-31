@@ -1,0 +1,34 @@
+# Free Pascal compiled units
+*.o
+*.ppu
+*.compiled
+*.rst
+*.rsj
+*.or
+link*.res
+
+# Lazarus build directories
+lib/
+
+# Backup files
+*.bak
+*~
+
+# Windows executables
+*.exe
+
+# Test binaries (Linux/macOS)
+tests/test_hashes
+tests/test_ciphers
+tests/test_block_modes
+tests/test_base64
+tests/test_stream_encrypt
+
+# Example binaries (Linux/macOS)
+examples/console/demo_encrypt_string
+examples/console/demo_file_encrypt
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
