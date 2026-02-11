@@ -1,5 +1,5 @@
 {===============================================================================
-  DCPcrypt v2.0.5 - A binary compatible implementation of RipeMD-128
+  DCPcrypt v2.0.6 - A binary compatible implementation of RipeMD-128
 
   SPDX-License-Identifier: MIT
   See LICENSE for full license text.

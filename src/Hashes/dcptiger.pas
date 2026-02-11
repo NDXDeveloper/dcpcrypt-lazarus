@@ -1,5 +1,5 @@
 {===============================================================================
-  DCPcrypt v2.0.5 - A binary compatible implementation of Tiger
+  DCPcrypt v2.0.6 - A binary compatible implementation of Tiger
 
   SPDX-License-Identifier: MIT
   See LICENSE for full license text.
