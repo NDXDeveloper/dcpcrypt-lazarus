@@ -1,5 +1,5 @@
 {===============================================================================
-  DCPcrypt v2.0.5 - Block cipher component definitions
+  DCPcrypt v2.0.6 - Block cipher component definitions
 
   SPDX-License-Identifier: MIT
   See LICENSE for full license text.

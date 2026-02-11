@@ -1,5 +1,5 @@
      =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-     =   DCPcrypt Cryptographic Component Library v2.0.5      =
+     =   DCPcrypt Cryptographic Component Library v2.0.6      =
      =          Lazarus / Free Pascal edition                 =
      =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
@@ -48,6 +48,8 @@ Examples:
   examples/console/
     demo_encrypt_string.lpr  - Console string encrypt/decrypt test
     demo_file_encrypt.lpr    - Console file encrypt/decrypt test
+    demo_hash_file.lpr       - Hash files using all 10 hash algorithms
+    demo_hash_large_file.lpr - Hash large files (>5 GB) with progress (--size, --dir)
 
   examples/gui/
     EncryptStrings/          - GUI string encryption using EncryptStream

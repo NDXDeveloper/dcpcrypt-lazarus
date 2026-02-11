@@ -1,5 +1,5 @@
 {===============================================================================
-  DCPcrypt v2.0.5 - Constants for use with DCPcrypt
+  DCPcrypt v2.0.6 - Constants for use with DCPcrypt
 
   SPDX-License-Identifier: MIT
   See LICENSE for full license text.
@@ -11,6 +11,8 @@
   Copyright (c) 2026 Nicolas Deoux (NDXDev@gmail.com)
 ===============================================================================}
 unit DCPconst;
+
+{$MODE Delphi}
 
 interface
 

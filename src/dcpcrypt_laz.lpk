@@ -20,7 +20,7 @@
 "/>
     <License Value="DCPcrypt is open source software (released under the MIT license) and as such there is no charge for inclusion in other software.
 www.cityinthesky.co.uk/cryptography.html"/>
-    <Version Major="2" Release="5"/>
+    <Version Major="2" Release="6"/>
     <Files Count="1">
       <Item1>
         <Filename Value="dcpreg.pas"/>
@@ -32,7 +32,7 @@ www.cityinthesky.co.uk/cryptography.html"/>
     <RequiredPkgs Count="2">
       <Item1>
         <PackageName Value="dcpcrypt"/>
-        <MinVersion Major="2" Release="5" Valid="True"/>
+        <MinVersion Major="2" Release="6" Valid="True"/>
       </Item1>
       <Item2>
         <PackageName Value="LCL"/>

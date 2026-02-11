@@ -1,5 +1,5 @@
 {===============================================================================
-  DCPcrypt v2.0.5 - Main component definitions
+  DCPcrypt v2.0.6 - Main component definitions
 
   SPDX-License-Identifier: MIT
   See LICENSE for full license text.

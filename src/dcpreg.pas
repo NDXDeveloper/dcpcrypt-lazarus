@@ -1,5 +1,5 @@
 {===============================================================================
-  DCPcrypt v2.0.5 - Component registration for DCPcrypt
+  DCPcrypt v2.0.6 - Component registration for DCPcrypt
 
   SPDX-License-Identifier: MIT
   See LICENSE for full license text.
