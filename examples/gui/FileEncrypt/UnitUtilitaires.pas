@@ -1,6 +1,6 @@
 unit UnitUtilitaires;
 
-{$MODE Delphi}
+{$MODE ObjFPC}{$H+}
 
 interface
 

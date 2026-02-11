@@ -1,6 +1,6 @@
 program EncryptFileUsingThread;
 
-{$MODE Delphi}
+{$MODE ObjFPC}{$H+}
 
 uses
   {$IFDEF UNIX}

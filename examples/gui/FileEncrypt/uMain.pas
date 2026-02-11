@@ -10,7 +10,7 @@
 {******************************************************************************}
 unit uMain;
 
-{$MODE Delphi}
+{$MODE ObjFPC}{$H+}
 
 interface
 
@@ -204,7 +204,7 @@ var
 begin
   // Enable drag-and-drop (LCL way)
   AllowDropFiles := True;
-  OnDropFiles :=FormDropFiles;
+  OnDropFiles := @FormDropFiles;
 
   // Command-line parameter support
   if ParamStr(1) <> '' then
@@ -411,7 +411,7 @@ begin
   ThreadTaf.outputfile := outfile;
   ThreadTaf.Hash := aHash;
   ThreadTaf.Cipher := aCipher;
-  ThreadTaf.OnProgress :=Pourcentage;
+  ThreadTaf.OnProgress := @Pourcentage;
   ThreadTaf.btnEncrypWasEnabled := btnEncrypt.Enabled;
   ThreadTaf.btnDecryptWasEnabled := btnDecrypt.Enabled;
   DisableControls;
@@ -431,7 +431,7 @@ begin
   ThreadTaf.outputfile := outfile;
   ThreadTaf.Hash := aHash;
   ThreadTaf.Cipher := aCipher;
-  ThreadTaf.OnProgress :=Pourcentage;
+  ThreadTaf.OnProgress := @Pourcentage;
   ThreadTaf.btnEncrypWasEnabled := btnEncrypt.Enabled;
   ThreadTaf.btnDecryptWasEnabled := btnDecrypt.Enabled;
   DisableControls;
@@ -528,7 +528,7 @@ end;
 
 procedure TThreadTaf.Execute;
 begin
-  _Cipher.OnProgressEvent :=Pourcentage;
+  _Cipher.OnProgressEvent := @Pourcentage;
   if _ModeEncrypt then
     DoEncrypt
   else
@@ -571,12 +571,12 @@ begin
     strmOutput.Free;
     ThreadRunning := False;
     _success := True;
-    Synchronize(EndingMessageDecryption);
+    Synchronize(@EndingMessageDecryption);
   except
     strmInput.Free;
     strmOutput.Free;
     _success := False;
-    Synchronize(EndingMessageDecryption);
+    Synchronize(@EndingMessageDecryption);
     ThreadRunning := False;
   end;
 end;
@@ -622,12 +622,12 @@ begin
     strmOutput.Free;
     ThreadRunning := False;
     _success := True;
-    Synchronize(EndingMessageEncryption);
+    Synchronize(@EndingMessageEncryption);
   except
     strmInput.Free;
     strmOutput.Free;
     _success := False;
-    Synchronize(EndingMessageEncryption);
+    Synchronize(@EndingMessageEncryption);
     ThreadRunning := False;
   end;
 end;
